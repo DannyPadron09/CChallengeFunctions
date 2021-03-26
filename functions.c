@@ -3,6 +3,7 @@
 
 int gcd(int x, int y);
 float absoluteValue(float z);
+float squareRoot(float z);
 
 int main()
 {
@@ -37,6 +38,9 @@ int main()
 
     printf("%.2f\n\n\n\n", absoluteValue(-6.0) / 4);
 
+    // Testing squareRoot Function
+    
+
 
 
     return 0;
@@ -64,4 +68,26 @@ float absoluteValue(float z)
         z = -z;
 
     return z;
+}
+
+float squareRoot(float z)
+{
+    const float epsilon = .00001;
+    float guess = 1.0;
+    float returnValue = 0,0;
+
+    if (z < 0)
+    {
+        printf("Negative argument to squareRoot.\n");
+        returnValue = -1.0;
+    }
+    else
+    {
+        while(absoluteValue(guess * guess - z) >= epsilon)
+            guess = (z / guess + guess) / 2.0;
+
+        returnValue = guess;
+    }
+
+    return returnValue;
 }
