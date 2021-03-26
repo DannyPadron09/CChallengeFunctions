@@ -39,8 +39,11 @@ int main()
     printf("%.2f\n\n\n\n", absoluteValue(-6.0) / 4);
 
     // Testing squareRoot Function
-    
-
+    printf("%.2f\n", squareRoot(-3.0));
+    printf("%.2f\n", squareRoot(16.0));
+    printf("%.2f\n", squareRoot(25.0));
+    printf("%.2f\n", squareRoot(9.0));
+    printf("%.2f\n", squareRoot(225.0));
 
 
     return 0;
@@ -74,7 +77,7 @@ float squareRoot(float z)
 {
     const float epsilon = .00001;
     float guess = 1.0;
-    float returnValue = 0,0;
+    float returnValue = 0.0;
 
     if (z < 0)
     {
